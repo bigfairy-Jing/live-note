@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta http-equiv="X-UA-Compatible" content="ie=edge">
+  <title>video</title>
+</head>
+
+<body>
+  <!-- 基础用法 -->
+  <!-- <video src="./film.mp4" width="400" height="225" controls controlslist="nodownload nofullscreen"></video> -->
+  <!-- 贴图 这里显示的视频的多少帧-->
+  <!-- <video src="./film.mp4" width="400" height="225" controls poster="./liuyifei.jpg"></video> -->
+  <!-- 自动播放,这里有些浏览器已经不支持非静音自动播放了，比方说谷歌，等等，所以现在流行静音播放 autoplay-->
+  <!-- <video src="./film.mp4" width="400"  height="225" autoplay controls poster="./liuyifei.jpg"></video> -->
+  <!-- 静音 默认静音，在移动端非静音状态下的视频是不允许播放的 muted-->
+  <!-- <video src="./film.mp4" width="400"  height="225" autoplay muted controls poster="./liuyifei.jpg"></video> -->
+  <!-- 循环播放 loop -->
+  <!-- <video src="./film.mp4" width="400"  height="225" autoplay muted controls loop poster="./liuyifei.jpg"></video> -->
+
+  <!-- 预加载,每个浏览器加载的机制是不一样的 preload-->
+  <!-- <video src="./film.mp4" width="400"  height="225" preload  muted controls loop  poster="./liuyifei.jpg"></video> -->
+  <!-- 音量控制 控制音量是通过js控制-->
+  <video id="video" src="./film.mp4" width="400"  height="225"    controls loop  poster="./liuyifei.jpg"></video>
+
+</body>
+<script>
+  var v  = document.getElementById('video');
+  v.volume = 0.5;
+
+
+
+
+</script>
+
+</html>

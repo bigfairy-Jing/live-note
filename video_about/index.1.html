@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta http-equiv="X-UA-Compatible" content="ie=edge">
+  <title>video</title>
+</head>
+
+<body>
+
+
+
+ <!-- video下面可以有多个source -->
+  <video id="video"  width="400"  height="225" autoplay  muted   controls loop  poster="./liuyifei.jpg">
+    <source src="./film3.mp4">
+    <source src="./film2.mp4">
+  </video>
+
+</body>
+<script>
+  var v  = document.getElementById('video');
+
+  // console.log(v.currentTime);
+  // v.currentTime = 60; //单位秒 //亲测 谷歌浏览器最新版是不可以的  火狐浏览器是可以的
+ 
+
+
+
+  setTimeout(()=>{
+    console.log('---->',v.src)//这里输出的是空的
+    console.log('---->',v.currentSrc)   //通过source 取到视频地址  取到当前这个
+  },3000)
+
+
+
+
+
+</script>
+
+</html>

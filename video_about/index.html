@@ -1,0 +1,73 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta http-equiv="X-UA-Compatible" content="ie=edge">
+  <title>video</title>
+</head>
+
+<body>
+
+
+
+  <!-- video下面可以有多个source -->
+  <video id="video" src="./film2.mp4" width="400" height="225"  muted controls  poster="./liuyifei.jpg">
+  </video>
+
+</body>
+<script>
+  var v = document.getElementById('video');
+
+  console.log(v.duration);//null
+
+ 
+  // 监听用户加载的事件
+  // seeking  //点击 了进度条之后会促发一个叫seeking的事件  seeking(寻找)
+
+  v.addEventListener('seeking',()=>{
+      console.log('seeking')
+  });
+
+
+  //seeked  表示这一次seek结束了
+  v.addEventListener('seeked',()=>{
+      console.log('seeked')
+  });
+
+
+  //waiting  //如果播放之后没有足够的数据就会促发 waiting
+  v.addEventListener('waiting',()=>{
+    console.log('waiting');
+  });
+  //playing
+  v.addEventListener('playing',()=>{
+     console.log('playing');
+  });
+
+  // seeking ---> seeked -----> playing
+
+  
+  //获取到  实时播放的一个事件  timeupdate
+
+  v.addEventListener('timeupdate',(e)=>{
+    // console.log('timeupdate',e)
+  });
+
+  //播放结束事件ended     //商业效果,视频播放结束播放一层广告
+  v.addEventListener('ended',()=>{
+    console.log('视频播放结束监听,')
+  })
+
+  //error   //错误事件处理   浏览器在播放出错的过程中 会自己尽量更正
+  v.addEventListener('error',(e)=>{
+    console.log('视频播放错误',e);
+  })
+
+
+
+
+</script>
+
+</html>

@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta http-equiv="X-UA-Compatible" content="ie=edge">
+  <title>video</title>
+</head>
+
+<body>
+  <!-- 播放时间控制 -->
+  <!-- <video id="video" src="./film.mp4" width="400"  height="225"    controls loop  poster="./liuyifei.jpg"></video> -->
+
+
+
+  <!-- 播放地址的切换 -->
+  <video id="video" src="./film.mp4" width="400"  height="225"    controls loop  poster="./liuyifei.jpg"></video>
+
+</body>
+<script>
+  var v  = document.getElementById('video');
+
+  // console.log(v.currentTime);
+  // v.currentTime = 60; //单位秒 //亲测 谷歌浏览器最新版是不可以的  火狐浏览器是可以的
+ 
+
+
+  setTimeout(()=>{
+    v.src = './film2.mp4'
+  },3000)
+
+
+
+
+
+</script>
+
+</html>

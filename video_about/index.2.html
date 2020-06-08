@@ -1,0 +1,89 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta http-equiv="X-UA-Compatible" content="ie=edge">
+  <title>video</title>
+</head>
+
+<body>
+
+
+
+  <!-- video下面可以有多个source -->
+  <video id="video" src="./film2.mp4" width="400" height="225"  muted controls loop poster="./liuyifei.jpg">
+  </video>
+
+</body>
+<script>
+  var v = document.getElementById('video');
+
+  console.log(v.duration);//null
+
+  //开始加载
+  v.addEventListener('loadstart',()=>{
+    console.log('视频开始加载了');
+  });
+
+  //durationchange () 这里能够拿到视频时长，是在加载完原信息之后才能获取到，所以监听durationchange
+
+  v.addEventListener('durationchange',()=>{
+    console.log('视频时长发生了变化',v.duration);
+  });
+ 
+  //loadedmetadata  拿到源数据 先触发 durationchange 后触发 loadedmetadata 然后loadeddata
+  v.addEventListener('loadedmetadata',()=>{
+    console.log('视频的源数据下载完成');
+  });
+
+  //loadeddata 源数据 加载完成
+
+  v.addEventListener('loadeddata',()=>{
+    console.log('loadeddata')
+  });
+
+  //progress
+  v.addEventListener('progress',()=>{
+    console.log('progress')
+  });
+
+  //canplay
+  v.addEventListener('canplay',()=>{
+    console.log('可以播放了');
+  });
+
+  //canplay  已经有足够的数据可以流畅的播放了
+
+  v.addEventListener('canplaythrough',()=>{
+    console.log('canplaythrough');
+  });
+
+  //如果想用程序来控制 视频的播放和结束通常用  'canplaythrough'  'canplay'; 一般监听到'canplaythrough'  'canplay' 才使用v.play(); 所以这里.play()这里就还没有播放
+
+
+  //play  点击了播放就会触发  从暂停到播放状态就会促发play
+  v.addEventListener('play',()=>{
+    console.log('play')
+  })
+
+ // pause
+  v.addEventListener('pause',()=>{
+    console.log('pause')
+  })
+
+
+
+
+
+
+
+
+
+
+
+
+</script>
+
+</html>
